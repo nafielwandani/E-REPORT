@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaporSantri - Portal Pengaduan & Aspirasi Santri Pesantren</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome 6 Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 75px;
+        }
+        .bg-islamic-green {
+            background-color: #0F5132 !important;
+        }
+        .text-islamic-green {
+            color: #0F5132 !important;
+        }
+        .border-islamic-green {
+            border-color: #0F5132 !important;
+        }
+        .btn-islamic-green {
+            background-color: #0F5132;
+            color: #ffffff;
+            border: none;
+        }
+        .btn-islamic-green:hover {
+            background-color: #0b3e26;
+            color: #ffffff;
+        }
+        .btn-outline-islamic-green {
+            border: 2px solid #0F5132;
+            color: #0F5132;
+            background: transparent;
+        }
+        .btn-outline-islamic-green:hover {
+            background-color: #0F5132;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+
+    <!-- 1. NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top shadow-sm py-3" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-dark d-flex align-items-center gap-2 fs-4" href="#">
+                <span class="bg-success text-white p-2 rounded-3 d-inline-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                    <i class="fa-solid fa-mosque"></i>
+                </span>
+                <span>Lapor<span class="text-success">Santri</span></span>
+            </a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-lg-4 my-2 my-lg-0 fw-medium">
+                    <li class="nav-item"><a class="nav-link px-3 active text-success" href="#hero">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#about">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#services">Layanan Kategori</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#recent-report">Laporan Terkini</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#faq">FAQ</a></li>
+                </ul>
+                <a class="btn btn-islamic-green fw-semibold px-4 py-2 rounded-3 shadow-sm"  href="dashboard.html">
+                    Halaman Admin
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. HERO SECTION -->
+    <section id="hero" class="bg-success-subtle pt-5 pb-5 mt-5">
+        <div class="container py-lg-5">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-7">
+                    <div class="d-inline-flex align-items-center gap-2 bg-white text-success border border-success-subtle fw-semibold px-3 py-1 rounded-pill small mb-3 shadow-sm">
+                         Portal Aspirasi & Layanan Santri Pesantren
+                    </div>
+                    <h1 class="display-5 fw-extrabold text-dark mb-3 lh-sm">
+                        Menjaga Kenyamanan Berkelanjutan & Kemaslahatan Lingkungan Pesantren
+                    </h1>
+                    <p class="lead text-secondary mb-4 fs-6">
+                        Platform pengaduan resmi santri untuk menyampaikan keluhan fasilitas kobong, air/sanitasi, barang hilang, dapur, hingga aspirasi kegiatan santri secara transparan dan amanah.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 mb-4">
+                        <button class="btn btn-islamic-green btn-lg fw-semibold px-4 rounded-3 shadow" data-bs-toggle="modal" data-bs-target="#modalLapor">
+                            <i class="fa-solid fa-paper-plane me-2"></i>Tulis Laporan Santri
+                        </button>
+                        <a href="#recent-report" class="btn btn-outline-dark btn-lg fw-semibold px-4 rounded-3">
+                            <i class="fa-solid fa-list-check me-2"></i>Pantau Laporan
+                        </a>
+                    </div>
+
+                    <!-- Statistik Cepat -->
+                    <div class="row g-3 pt-3 border-top border-success-subtle">
+                        <div class="col-6 col-md-3">
+                            <div class="bg-white p-3 rounded-3 border shadow-sm text-center">
+                                <h4 class="fw-bold text-success mb-0">1,240+</h4>
+                                <small class="text-muted fw-semibold" style="font-size: 0.75rem;">Total Laporan</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="bg-white p-3 rounded-3 border shadow-sm text-center">
+                                <h4 class="fw-bold text-primary mb-0">45</h4>
+                                <small class="text-muted fw-semibold" style="font-size: 0.75rem;">Sedang Diproses</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="bg-white p-3 rounded-3 border shadow-sm text-center">
+                                <h4 class="fw-bold text-success mb-0">97.8%</h4>
+                                <small class="text-muted fw-semibold" style="font-size: 0.75rem;">Selesai Ditangani</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="bg-white p-3 rounded-3 border shadow-sm text-center">
+                                <h4 class="fw-bold text-warning mb-0">4.9/5</h4>
+                                <small class="text-muted fw-semibold" style="font-size: 0.75rem;">Kepuasan Santri</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 text-center">
+                    <div class="position-relative d-inline-block w-100">
+                        <img src="https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&w=800&q=80" 
+                             alt="Kehidupan Santri Pesantren" 
+                             class="img-fluid rounded-4 shadow-lg w-100 object-fit-cover" 
+                             style="max-height: 420px;"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x450/0f5132/FFFFFF?text=LaporSantri+Pesantren';">
+                        <div class="position-absolute bottom-0 start-0 translate-middle-y bg-white p-3 rounded-3 shadow border d-none d-sm-flex align-items-center gap-3 ms-n3 mb-n3">
+                            <div class="bg-success-subtle text-success p-2 rounded-circle">
+                                <i class="fa-solid fa-hand-holding-heart fs-4"></i>
+                            </div>
+                            <div class="text-start">
+                                <div class="fw-bold text-dark small">Penanganan Berkah & Amanah</div>
+                                <div class="text-muted" style="font-size: 0.75rem;">Langsung direspons Pengurus / Pengasuh</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ABOUT SECTION -->
+    <section id="about" class="py-5 bg-white">
+        <div class="container py-4">
+            <div class="row align-items-center gy-4 mb-5">
+                <div class="col-lg-6">
+                    <small class="text-success fw-bold text-uppercase tracking-wider">Tentang LaporSantri</small>
+                    <h2 class="fw-bold text-dark display-6 mt-1 mb-3">Wadah Aspirasi Santri Demi Kemaslahatan Pesantren</h2>
+                    <p class="text-secondary leading-relaxed mb-4">
+                        Sistem **LaporSantri** hadir sebagai jembatan komunikasi antara para santri dengan Pengurus Komplek, Lurah Pesantren, dan Pengasuh. Kami berkomitmen menciptakan lingkungan belajar dan mengaji yang nyaman, kondusif, serta bebas dari kendala sarana prasarana.
+                    </p>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="bg-success-subtle text-success p-2 rounded-3">
+                                    <i class="fa-solid fa-user-ninja fs-5"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Bisa Anonim / Rahasia</h6>
+                                    <p class="small text-muted mb-0">Identitas santri terlindungi jika ingin menyampaikan curhat/kendala sensitif.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-start gap-3">
+                                <div class="bg-warning-subtle text-warning-emphasis p-2 rounded-3">
+                                    <i class="fa-solid fa-bolt fs-5"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Respon Cepat Pengurus</h6>
+                                    <p class="small text-muted mb-0">Laporan langsung diteruskan ke seksi/bidang yang bersangkutan.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="bg-light p-4 rounded-4 border border-success-subtle">
+                        <h5 class="fw-bold text-dark mb-3"><i class="fa-solid fa-star text-warning me-2"></i>Prinsip Layanan Santri</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li class="d-flex align-items-center gap-3 mb-3">
+                                <i class="fa-solid fa-circle-check text-success fs-5"></i>
+                                <span class="text-secondary small fw-medium">Pengaduan transparan & tercatat rapi secara digital</span>
+                            </li>
+                            <li class="d-flex align-items-center gap-3 mb-3">
+                                <i class="fa-solid fa-circle-check text-success fs-5"></i>
+                                <span class="text-secondary small fw-medium">Penanganan masalah sarpras (Air, Listrik, Kobong) diprioritaskan</span>
+                            </li>
+                            <li class="d-flex align-items-center gap-3 mb-3">
+                                <i class="fa-solid fa-circle-check text-success fs-5"></i>
+                                <span class="text-secondary small fw-medium">Fasilitas Konseling dan Bimbingan Akademik Takhassus</span>
+                            </li>
+                            <li class="d-flex align-items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-success fs-5"></i>
+                                <span class="text-secondary small fw-medium">Klarifikasi barang tertukar/hilang (Kitab, Pakaian, Seragam)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workflow Steps -->
+            <div class="pt-4 border-top">
+                <div class="text-center mb-4">
+                    <h5 class="fw-bold text-dark">Alur Alur Pengaduan Santri</h5>
+                    <p class="text-muted small">4 Langkah mudah dari pengaduan hingga penyelesaian yang barokah</p>
+                </div>
+                <div class="row g-4 text-center">
+                    <div class="col-md-3">
+                        <div class="p-3 bg-light rounded-3 border h-100">
+                            <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3 fw-bold" style="width: 48px; height: 48px;">1</div>
+                            <h6 class="fw-bold mb-1">1. Tulis Laporan</h6>
+                            <p class="small text-muted mb-0">Isi formulir pengaduan lengkap dengan komplek/kamar & detail masalah.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="p-3 bg-light rounded-3 border h-100">
+                            <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3 fw-bold" style="width: 48px; height: 48px;">2</div>
+                            <h6 class="fw-bold mb-1">2. Verifikasi Pengurus</h6>
+                            <p class="small text-muted mb-0">Lurah Komplek / Pengurus mengecek keabsahan dan urgensi laporan.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="p-3 bg-light rounded-3 border h-100">
+                            <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3 fw-bold" style="width: 48px; height: 48px;">3</div>
+                            <h6 class="fw-bold mb-1">3. Tindak Lanjut Bidang</h6>
+                            <p class="small text-muted mb-0">Seksi Sarpras/Kesehatan/Keamanan menerjunkan tim penanganan.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="p-3 bg-light rounded-3 border h-100">
+                            <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3 fw-bold" style="width: 48px; height: 48px;">4</div>
+                            <h6 class="fw-bold mb-1">4. Selesai & Barokah</h6>
+                            <p class="small text-muted mb-0">Masalah terselesaikan dan santri dapat beribadah/belajar dengan nyaman.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SERVICES SECTION (KATEGORI LAPORAN SANTRI) -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <small class="text-success fw-bold text-uppercase tracking-wider">Kategori Pengaduan</small>
+                <h2 class="fw-bold text-dark display-6 mt-1">Layanan Pengaduan Santri</h2>
+                <p class="text-muted col-lg-6 mx-auto">Pilih jenis bidang pengaduan atau aspirasi sesuai dengan kendala yang dihadapi di pesantren.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm p-4 rounded-4 transition-all">
+                        <div class="bg-success-subtle text-success rounded-3 p-3 d-inline-block mb-3" style="width: fit-content;">
+                            <i class="fa-solid fa-faucet-drip fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold text-dark mb-2">Fasilitas & Sarpras</h5>
+                        <p class="text-muted small mb-0">Kamar/Kobong rusak, air kamar mandi mati, kendala listrik, keran wudhu bocor, fasilitas kelas madrasah.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm p-4 rounded-4 transition-all">
+                        <div class="bg-primary-subtle text-primary rounded-3 p-3 d-inline-block mb-3" style="width: fit-content;">
+                            <i class="fa-solid fa-notes-medical fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold text-dark mb-2">Kebersihan & Kesehatan</h5>
+                        <p class="text-muted small mb-0">Layanan Poskestren, penumpukan sampah komplek, kebersihan tempat wudhu, menu makanan dapur & kantin.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm p-4 rounded-4 transition-all">
+                        <div class="bg-warning-subtle text-warning-emphasis rounded-3 p-3 d-inline-block mb-3" style="width: fit-content;">
+                            <i class="fa-solid fa-shield-cat fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold text-dark mb-2">Keamanan & Ketertiban</h5>
+                        <p class="text-muted small mb-0">Kitab/buku tertukar di aula, barang/pakaian hilang di jemuran, keamanan loker santri.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm p-4 rounded-4 transition-all">
+                        <div class="bg-info-subtle text-info-emphasis rounded-3 p-3 d-inline-block mb-3" style="width: fit-content;">
+                            <i class="fa-solid fa-passport fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold text-dark mb-2">Perizinan & Kedisiplinan</h5>
+                        <p class="text-muted small mb-0">Informasi izin pulang (sambangan), pembayaran syahriah, presensi jamaah & kegiatan madrasah.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm p-4 rounded-4 transition-all">
+                        <div class="bg-danger-subtle text-danger rounded-3 p-3 d-inline-block mb-3" style="width: fit-content;">
+                            <i class="fa-solid fa-heart-pulse fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold text-dark mb-2">Bimbingan & Konseling</h5>
+                        <p class="text-muted small mb-0">Curhat santri, masalah adaptasi kobong, kendala hafalan Al-Qur'an/Takhassus, bimbingan ustadz.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm p-4 rounded-4 transition-all">
+                        <div class="bg-secondary-subtle text-dark rounded-3 p-3 d-inline-block mb-3" style="width: fit-content;">
+                            <i class="fa-solid fa-lightbulb fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold text-dark mb-2">Aspirasi & Kegiatan</h5>
+                        <p class="text-muted small mb-0">Usulan acara panggung imtihan, ekstrakurikuler (Hadroh, Kaligrafi, Olahraga), saran pengembangan santri.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. RECENT REPORT SECTION -->
+    <section id="recent-report" class="py-5 bg-white">
+        <div class="container py-4">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
+                <div>
+                    <small class="text-success fw-bold text-uppercase tracking-wider">Transparansi Pesantren</small>
+                    <h2 class="fw-bold text-dark display-6 mt-1 mb-0">Laporan Terkini Santri</h2>
+                </div>
+
+                <!-- Filter Badges / Tab Buttons -->
+                <div class="mt-3 mt-md-0 d-flex flex-wrap gap-2" id="filterContainer">
+                    <button class="btn btn-islamic-green btn-sm rounded-pill px-3 filter-btn active" data-filter="all">Semua Laporan</button>
+                    <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 filter-btn" data-filter="menunggu">Menunggu</button>
+                    <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 filter-btn" data-filter="diproses">Diproses</button>
+                    <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 filter-btn" data-filter="selesai">Selesai</button>
+                </div>
+            </div>
+
+            <!-- Report Grid Container -->
+            <div class="row g-4" id="recentReportsGrid">
+
+                <!-- Sample Card 1 -->
+                <div class="col-md-6 col-lg-4 report-card" data-status="selesai">
+                    <div class="card h-100 border rounded-4 p-4 shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill fw-semibold">
+                                <i class="fa-solid fa-circle-check me-1"></i>Selesai
+                            </span>
+                            <small class="text-muted"><i class="fa-regular fa-clock me-1"></i>3 Jam lalu</small>
+                        </div>
+                        <span class="badge bg-light text-secondary border w-fit-content align-self-start mb-2" style="font-size: 0.75rem;">Fasilitas & Sarpras</span>
+                        <h6 class="fw-bold text-dark mb-1">Keran Tempat Wudhu Masjid Bocor</h6>
+                        <p class="text-muted small mb-3">2 keran di tempat wudhu sebelah timur masjid utama bocor deras, membuat air terbuang.</p>
+                        <div class="bg-light p-2 rounded-3 mb-3 small border">
+                            <strong class="text-success d-block mb-1"><i class="fa-solid fa-reply me-1"></i>Tanggapan Pengurus:</strong>
+                            <span class="text-muted">Sudah diganti karet & keran baru oleh Seksi Sarpras jam 10.00 WIB. Syukron.</span>
+                        </div>
+                        <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center small text-muted">
+                            <span><i class="fa-solid fa-location-dot me-1 text-danger"></i>Komplek Masjid Utama</span>
+                            <span class="fw-bold text-dark">#STR-9042</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Card 2 -->
+                <div class="col-md-6 col-lg-4 report-card" data-status="diproses">
+                    <div class="card h-100 border rounded-4 p-4 shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle px-3 py-2 rounded-pill fw-semibold">
+                                <i class="fa-solid fa-spinner me-1 fa-spin"></i>Diproses
+                            </span>
+                            <small class="text-muted"><i class="fa-regular fa-clock me-1"></i>6 Jam lalu</small>
+                        </div>
+                        <span class="badge bg-light text-secondary border w-fit-content align-self-start mb-2" style="font-size: 0.75rem;">Fasilitas & Sarpras</span>
+                        <h6 class="fw-bold text-dark mb-1">Air Mati di Kamar Mandi Komplek B</h6>
+                        <p class="text-muted small mb-3">Pompa air komplek B mengalamai kendala sejak subuh, mohon pengecekan saklar/toren.</p>
+                        <div class="bg-light p-2 rounded-3 mb-3 small border">
+                            <strong class="text-primary d-block mb-1"><i class="fa-solid fa-reply me-1"></i>Tanggapan Pengurus:</strong>
+                            <span class="text-muted">Teknisi sedang memperbaiki dinamo air. Estimasi nyala siang ini.</span>
+                        </div>
+                        <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center small text-muted">
+                            <span><i class="fa-solid fa-location-dot me-1 text-danger"></i>Komplek B (Putra)</span>
+                            <span class="fw-bold text-dark">#STR-9041</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Card 3 -->
+                <div class="col-md-6 col-lg-4 report-card" data-status="menunggu">
+                    <div class="card h-100 border rounded-4 p-4 shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill fw-semibold">
+                                <i class="fa-solid fa-hourglass-start me-1"></i>Menunggu
+                            </span>
+                            <small class="text-muted"><i class="fa-regular fa-clock me-1"></i>1 Hari lalu</small>
+                        </div>
+                        <span class="badge bg-light text-secondary border w-fit-content align-self-start mb-2" style="font-size: 0.75rem;">Keamanan & Ketertiban</span>
+                        <h6 class="fw-bold text-dark mb-1">Kitab Aqidatul Awam Tertukar di Aula</h6>
+                        <p class="text-muted small mb-3">Kitab sampul hijau ada tulisan nama "Ahmad R" tertukar setelah pengajian babin subuh kemarin.</p>
+                        <div class="bg-light p-2 rounded-3 mb-3 small border">
+                            <strong class="text-secondary d-block mb-1"><i class="fa-solid fa-reply me-1"></i>Tanggapan Pengurus:</strong>
+                            <span class="text-muted">Laporan telah diteruskan ke Seksi Keamanan untuk diumumkan di pengeras suara.</span>
+                        </div>
+                        <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center small text-muted">
+                            <span><i class="fa-solid fa-location-dot me-1 text-danger"></i>Aula Utama Pesantren</span>
+                            <span class="fw-bold text-dark">#STR-9039</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Card 4 -->
+                <div class="col-md-6 col-lg-4 report-card" data-status="selesai">
+                    <div class="card h-100 border rounded-4 p-4 shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill fw-semibold">
+                                <i class="fa-solid fa-circle-check me-1"></i>Selesai
+                            </span>
+                            <small class="text-muted"><i class="fa-regular fa-clock me-1"></i>2 Hari lalu</small>
+                        </div>
+                        <span class="badge bg-light text-secondary border w-fit-content align-self-start mb-2" style="font-size: 0.75rem;">Fasilitas & Sarpras</span>
+                        <h6 class="fw-bold text-dark mb-1">Lampu Kelas 2 Aliyah Redup/Mati</h6>
+                        <p class="text-muted small mb-3">Lampu neon dibelakang papan tulis mati sehingga mengganggu halqah belajar malam.</p>
+                        <div class="bg-light p-2 rounded-3 mb-3 small border">
+                            <strong class="text-success d-block mb-1"><i class="fa-solid fa-reply me-1"></i>Tanggapan Pengurus:</strong>
+                            <span class="text-muted">Lampu LED 18 watt baru sudah dipasang oleh pengurus fasilitas madrasah.</span>
+                        </div>
+                        <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center small text-muted">
+                            <span><i class="fa-solid fa-location-dot me-1 text-danger"></i>Gedung Madrasah Lt. 2</span>
+                            <span class="fw-bold text-dark">#STR-9035</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Card 5 -->
+                <div class="col-md-6 col-lg-4 report-card" data-status="menunggu">
+                    <div class="card h-100 border rounded-4 p-4 shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill fw-semibold">
+                                <i class="fa-solid fa-hourglass-start me-1"></i>Menunggu
+                            </span>
+                            <small class="text-muted"><i class="fa-regular fa-clock me-1"></i>2 Hari lalu</small>
+                        </div>
+                        <span class="badge bg-light text-secondary border w-fit-content align-self-start mb-2" style="font-size: 0.75rem;">Aspirasi & Kegiatan</span>
+                        <h6 class="fw-bold text-dark mb-1">Usulan Penambahan Menu Lauk Dapur</h6>
+                        <p class="text-muted small mb-3">Usulan variasi menu lauk makan siang santri agar ditambahkan opsi tempe/tahu bacem dan buah.</p>
+                        <div class="bg-light p-2 rounded-3 mb-3 small border">
+                            <strong class="text-secondary d-block mb-1"><i class="fa-solid fa-reply me-1"></i>Tanggapan Pengurus:</strong>
+                            <span class="text-muted">Usulan dicatat dan disampaikan dalam rapat bulanan Seksi Konsumsi Dapur.</span>
+                        </div>
+                        <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center small text-muted">
+                            <span><i class="fa-solid fa-location-dot me-1 text-danger"></i>Dapur Santri Pusat</span>
+                            <span class="fw-bold text-dark">#STR-9030</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FAQ SECTION -->
+    <section id="faq" class="py-5 bg-light">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <small class="text-success fw-bold text-uppercase tracking-wider">Pertanyaan Umum</small>
+                <h2 class="fw-bold text-dark display-6 mt-1">Frequently Asked Questions (FAQ)</h2>
+                <p class="text-muted col-lg-6 mx-auto">Jawaban atas pertanyaan yang paling sering ditanyakan oleh santri terkait layanan pengaduan.</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion accordion-flush" id="faqAccordion">
+
+                        <div class="accordion-item rounded-3 border mb-3 shadow-sm overflow-hidden">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-dark collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    <i class="fa-solid fa-circle-question me-2 text-success"></i>Apakah laporan santri bisa dikirim secara Anonim (Rahasia)?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-secondary small leading-relaxed">
+                                    Bisa. Cukup centang opsi <strong>"Kirim sebagai Anonim"</strong> pada form pengaduan. Nama Anda tidak akan ditampilkan secara umum di halaman publik demi menjaga kenyamanan santri.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item rounded-3 border mb-3 shadow-sm overflow-hidden">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-dark collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    <i class="fa-solid fa-circle-question me-2 text-success"></i>Berapa lama laporan ditindaklanjuti oleh pengurus?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-secondary small leading-relaxed">
+                                    Untuk laporan yang berhubungan dengan fasilitas darurat seperti air mati atau masalah listrik, tim Sarpras akan langsung mengecek dalam kurun waktu 1 - 3 jam. Laporan non-darurat ditanggapi maksimal 1x24 jam.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item rounded-3 border mb-3 shadow-sm overflow-hidden">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-dark collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    <i class="fa-solid fa-circle-question me-2 text-success"></i>Siapa saja yang merespon dan membaca laporan ini?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-secondary small leading-relaxed">
+                                    Laporan dibaca oleh Tim Sekretariat Pengurus Pesantren, Lurah Komplek, serta Kepala Bidang/Seksi terkait (Kesehatan, Sarpras, Keamanan, Pendidikan).
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item rounded-3 border mb-3 shadow-sm overflow-hidden">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-dark collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    <i class="fa-solid fa-circle-question me-2 text-success"></i>Bagaimana cara melaporkan kitab atau barang yang tertukar/hilang?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-secondary small leading-relaxed">
+                                    Pilih kategori <strong>"Keamanan & Ketertiban"</strong>, lalu sebutkan nama barang/kitab, ciri khas (sampul/coretan nama), serta lokasi terakhir barang tersebut berada.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FOOTER SECTION -->
+    <section class="bg-dark text-white pt-5 pb-4 border-top border-success border-4">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-6">
+                    <a class="navbar-brand fw-bold text-white d-flex align-items-center gap-2 fs-4 mb-3" href="#">
+                        <span class="bg-success text-white p-2 rounded-3 d-inline-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
+                            <i class="fa-solid fa-book-quran fs-6"></i>
+                        </span>
+                        <span>Lapor<span class="text-success">Santri</span></span>
+                    </a>
+                    <p class="text-secondary small mb-4">
+                        Portal resmi aspirasi & pengaduan santri pondok pesantren. Mendorong lingkungan belajar-mengaji yang amanah, bersih, dan berkah.
+                    </p>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="btn btn-outline-secondary btn-sm rounded-circle d-inline-flex align-items-center justify-content-center" style="width:36px; height:36px;"><i class="fa-brands fa-facebook-f text-white"></i></a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm rounded-circle d-inline-flex align-items-center justify-content-center" style="width:36px; height:36px;"><i class="fa-brands fa-instagram text-white"></i></a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm rounded-circle d-inline-flex align-items-center justify-content-center" style="width:36px; height:36px;"><i class="fa-brands fa-youtube text-white"></i></a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm rounded-circle d-inline-flex align-items-center justify-content-center" style="width:36px; height:36px;"><i class="fa-brands fa-whatsapp text-white"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold text-white mb-3">Navigasi</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#hero" class="text-secondary text-decoration-none">Beranda</a></li>
+                        <li class="mb-2"><a href="#about" class="text-secondary text-decoration-none">Tentang LaporSantri</a></li>
+                        <li class="mb-2"><a href="#services" class="text-secondary text-decoration-none">Kategori Pengaduan</a></li>
+                        <li class="mb-2"><a href="#recent-report" class="text-secondary text-decoration-none">Laporan Terkini</a></li>
+                        <li class="mb-2"><a href="#faq" class="text-secondary text-decoration-none">FAQ Santri</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-bold text-white mb-3">Bidang Pengaduan</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#services" class="text-secondary text-decoration-none">Fasilitas & Sarpras Kobong</a></li>
+                        <li class="mb-2"><a href="#services" class="text-secondary text-decoration-none">Kebersihan & Poskestren</a></li>
+                        <li class="mb-2"><a href="#services" class="text-secondary text-decoration-none">Barang Hilang / Ketuker</a></li>
+                        <li class="mb-2"><a href="#services" class="text-secondary text-decoration-none">Bimbingan & Konseling Santri</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-bold text-white mb-3">Sekretariat Pengurus</h6>
+                    <ul class="list-unstyled small text-secondary">
+                        <li class="mb-2 d-flex align-items-center gap-2">
+                            <i class="fa-solid fa-building-columns text-success"></i> Gedung Kantor Central Pengurus
+                        </li>
+                        <li class="mb-2 d-flex align-items-center gap-2">
+                            <i class="fa-solid fa-phone text-success"></i> Call Center / WA: 0812-9988-7766
+                        </li>
+                        <li class="mb-2 d-flex align-items-center gap-2">
+                            <i class="fa-solid fa-envelope text-success"></i> lapor@pesantrenku.id
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="border-secondary opacity-25">
+
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center small text-secondary pt-2">
+                <p class="mb-2 mb-sm-0">&copy; 2026 LaporSantri - Portal Pengaduan Pesantren. All rights reserved.</p>
+                <div>
+                    <a href="#" class="text-secondary text-decoration-none me-3">Kebijakan Privasi</a>
+                    <a href="#" class="text-secondary text-decoration-none">Syarat & Ketentuan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL FORM PENGADUAN SANTRI -->
+    <div class="modal fade" id="modalLapor" tabindex="-1" aria-labelledby="modalLaporLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content rounded-4 border-0 shadow">
+                <div class="modal-header border-0 pt-4 px-4 pb-0">
+                    <h5 class="modal-title fw-bold text-dark" id="modalLaporLabel">
+                        <i class="fa-solid fa-book-open-reader text-success me-2"></i>Formulir Pengaduan & Aspirasi Santri
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <!-- Toast Notification Success Alert -->
+                    <div id="modalAlert" class="alert alert-success d-none mb-3" role="alert">
+                        <i class="fa-solid fa-circle-check me-2"></i>Jazakallah! Laporan berhasil dikirim. ID Laporan Anda: <strong id="newReportId">#STR-0000</strong>.
+                    </div>
+
+                    <form id="formPengaduanSantri">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="namaSantri" class="form-label fw-semibold small">Nama Lengkap Santri</label>
+                                <input type="text" class="form-control" id="namaSantri" placeholder="Masukkan nama santri" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="nisKomplek" class="form-label fw-semibold small">NIS / Komplek & No. Kamar</label>
+                                <input type="text" class="form-control" id="nisKomplek" placeholder="Contoh: Komplek B / Kamar 04" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="kategoriLaporan" class="form-label fw-semibold small">Kategori Layanan</label>
+                                <select class="form-select" id="kategoriLaporan" required>
+                                    <option value="" selected disabled>Pilih Kategori Pengaduan...</option>
+                                    <option value="Fasilitas & Sarpras">Fasilitas & Sarpras (Kamar, Air, Listrik)</option>
+                                    <option value="Kebersihan & Kesehatan">Kebersihan & Kesehatan (Poskestren, Dapur)</option>
+                                    <option value="Keamanan & Ketertiban">Keamanan & Ketertiban (Barang Hilang/Ketuker)</option>
+                                    <option value="Perizinan & Kedisiplinan">Perizinan & Kedisiplinan</option>
+                                    <option value="Bimbingan & Konseling">Bimbingan & Konseling Santri</option>
+                                    <option value="Aspirasi & Kegiatan">Aspirasi & Kegiatan Santri</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lokasiKejadian" class="form-label fw-semibold small">Lokasi Spesifik / Komplek</label>
+                                <input type="text" class="form-control" id="lokasiKejadian" placeholder="Contoh: Kamar Mandi Utama Komplek A" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="judulLaporan" class="form-label fw-semibold small">Judul Laporan Pengaduan</label>
+                                <input type="text" class="form-control" id="judulLaporan" placeholder="Ringkasan singkat masalah" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="deskripsiLaporan" class="form-label fw-semibold small">Detail Pengaduan / Uraian Masalah</label>
+                                <textarea class="form-control" id="deskripsiLaporan" rows="4" placeholder="Jelaskan kendala secara rinci, waktu kejadian, serta harapan tindak lanjut..." required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="anonimCheck">
+                                    <label class="form-check-label small text-muted" for="anonimCheck">
+                                        Kirim sebagai Anonim (Sembunyikan nama santri dari tampilan umum)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 d-flex justify-content-end gap-2">
+                            <button type="button" class="btn btn-light fw-semibold" data-bs-dismiss="modal">Batal</button>
+                            <button type="submit" class="btn btn-islamic-green fw-semibold px-4">
+                                <i class="fa-solid fa-paper-plane me-2"></i>Kirim Laporan Santri
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script Interaktivitas & Dynamic Report Addition -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('formPengaduanSantri');
+            const alertBox = document.getElementById('modalAlert');
+            const newReportId = document.getElementById('newReportId');
+            const recentReportsGrid = document.getElementById('recentReportsGrid');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+
+            // 1. Submit Form & Dynamic Card Creation
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const randomId = 'STR-' + Math.floor(9000 + Math.random() * 1000);
+                newReportId.innerText = '#' + randomId;
+
+                const judul = document.getElementById('judulLaporan').value;
+                const deskripsi = document.getElementById('deskripsiLaporan').value;
+                const lokasi = document.getElementById('lokasiKejadian').value;
+                const kategori = document.getElementById('kategoriLaporan').value || 'Fasilitas & Sarpras';
+
+                // HTML Card Laporan Baru Khas Santri
+                const newCardHTML = `
+                    <div class="col-md-6 col-lg-4 report-card" data-status="menunggu">
+                        <div class="card h-100 border rounded-4 p-4 shadow-sm">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill fw-semibold">
+                                    <i class="fa-solid fa-hourglass-start me-1"></i>Menunggu
+                                </span>
+                                <small class="text-muted"><i class="fa-regular fa-clock me-1"></i>Baru saja</small>
+                            </div>
+                            <span class="badge bg-light text-secondary border w-fit-content align-self-start mb-2" style="font-size: 0.75rem;">${escapeHtml(kategori)}</span>
+                            <h6 class="fw-bold text-dark mb-1">${escapeHtml(judul)}</h6>
+                            <p class="text-muted small mb-3">${escapeHtml(deskripsi)}</p>
+                            <div class="bg-light p-2 rounded-3 mb-3 small border">
+                                <strong class="text-secondary d-block mb-1"><i class="fa-solid fa-reply me-1"></i>Tanggapan Pengurus:</strong>
+                                <span class="text-muted">Laporan telah masuk & menunggu verifikasi Seksi Pengurus Komplek.</span>
+                            </div>
+                            <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center small text-muted">
+                                <span><i class="fa-solid fa-location-dot me-1 text-danger"></i>${escapeHtml(lokasi)}</span>
+                                <span class="fw-bold text-dark">#${randomId}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                recentReportsGrid.insertAdjacentHTML('afterbegin', newCardHTML);
+                alertBox.classList.remove('d-none');
+                form.reset();
+
+                setTimeout(() => {
+                    alertBox.classList.add('d-none');
+                    const modalEl = document.getElementById('modalLapor');
+                    const modal = bootstrap.Modal.getInstance(modalEl);
+                    if (modal) modal.hide();
+                }, 2000);
+            });
+
+            // 2. Filter Recent Reports Tab
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active', 'btn-islamic-green');
+                        b.classList.add('btn-outline-secondary');
+                    });
+                    btn.classList.remove('btn-outline-secondary');
+                    btn.classList.add('active', 'btn-islamic-green');
+
+                    const filterValue = btn.getAttribute('data-filter');
+                    const reportCards = document.querySelectorAll('.report-card');
+
+                    reportCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-status') === filterValue) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Helper sanitasi string HTML
+            function escapeHtml(text) {
+                return text
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#039;");
+            }
+        });
+    </script>
+</body>
+</html>

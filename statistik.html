@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistik Laporan - E-Lapor Santri</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+                <i class="fa-solid fa-mosque fs-4"></i> E-Lapor Santri
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fa-solid fa-house me-1"></i> Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html"><i class="fa-solid fa-gauge me-1"></i> Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fw-semibold" href="statistik.html"><i class="fa-solid fa-chart-pie me-1"></i> Statistik</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="setting.html"><i class="fa-solid fa-gear me-1"></i> Pengaturan</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container py-4">
+
+        <!-- Header Page -->
+        <div class="mb-4">
+            <h3 class="fw-bold text-success mb-1">Analitik & Statistik Pengaduan</h3>
+            <p class="text-muted small mb-0">Rangkuman data visual pengaduan dan aspirasi santri tahun ajaran 2026/2027.</p>
+        </div>
+
+        <!-- Metric KPI Cards -->
+        <div class="row g-3 mb-4">
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm p-3 text-center bg-white">
+                    <div class="text-success mb-2"><i class="fa-solid fa-bolt-lightning fs-2"></i></div>
+                    <h2 class="fw-bold text-dark mb-0">1.8 Hari</h2>
+                    <span class="text-muted small">Rata-Rata Waktu Respon Pengurus</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm p-3 text-center bg-white">
+                    <div class="text-success mb-2"><i class="fa-solid fa-thumbs-up fs-2"></i></div>
+                    <h2 class="fw-bold text-dark mb-0">96.4%</h2>
+                    <span class="text-muted small">Tingkat Kepuasan Santri</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm p-3 text-center bg-white">
+                    <div class="text-success mb-2"><i class="fa-solid fa-check-double fs-2"></i></div>
+                    <h2 class="fw-bold text-dark mb-0">84.1%</h2>
+                    <span class="text-muted small">Persentase Laporan Selesai</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Progress Categorization -->
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-header bg-white py-3">
+                        <h6 class="fw-bold text-success mb-0"><i class="fa-solid fa-chart-bar me-2"></i>Persentase Kategori Pengaduan Santri</h6>
+                    </div>
+                    <div class="card-body">
+                        <!-- Item 1 -->
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="fw-semibold small"><i class="fa-solid fa-wrench text-danger me-1"></i> Sarana & Fasilitas Asrama</span>
+                                <span class="fw-bold small">45% (561 Laporan)</span>
+                            </div>
+                            <div class="progress" style="height: 12px;">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 45%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="fw-semibold small"><i class="fa-solid fa-utensils text-warning me-1"></i> Konsumsi & Dapur Pesantren</span>
+                                <span class="fw-bold small">25% (312 Laporan)</span>
+                            </div>
+                            <div class="progress" style="height: 12px;">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 25%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="fw-semibold small"><i class="fa-solid fa-book-quran text-primary me-1"></i> Kegiatan Pengajian & Akademik</span>
+                                <span class="fw-bold small">18% (224 Laporan)</span>
+                            </div>
+                            <div class="progress" style="height: 12px;">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 18%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="fw-semibold small"><i class="fa-solid fa-pump-soap text-info me-1"></i> Kebersihan & Kesehatan</span>
+                                <span class="fw-bold small">12% (151 Laporan)</span>
+                            </div>
+                            <div class="progress" style="height: 12px;">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 12%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resolution Status Progress -->
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-header bg-white py-3">
+                        <h6 class="fw-bold text-success mb-0"><i class="fa-solid fa-chart-donut me-2"></i>Status Penyelesaian Laporan</h6>
+                    </div>
+                    <div class="card-body">
+                        <!-- Progress Status -->
+                        <div class="mb-4 text-center">
+                            <h1 class="display-4 fw-bold text-success mb-0">1,050</h1>
+                            <span class="text-muted small">Laporan Berhasil Diselesaikan Dari Total 1,248 Laporan</span>
+                        </div>
+
+                        <div class="progress mb-3" style="height: 20px;">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 84%" title="Selesai (84%)">Selesai (84%)</div>
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 12%" title="Diproses (12%)">Diproses</div>
+                            <div class="progress-bar bg-warning text-dark" role="progressbar" style="width: 4%" title="Menunggu (4%)">4%</div>
+                        </div>
+
+                        <div class="row text-center mt-4">
+                            <div class="col-4">
+                                <span class="badge bg-success rounded-pill p-2 mb-1 d-block">Selesai</span>
+                                <span class="fw-bold">1,050</span>
+                            </div>
+                            <div class="col-4">
+                                <span class="badge bg-info rounded-pill p-2 mb-1 d-block">Diproses</span>
+                                <span class="fw-bold">156</span>
+                            </div>
+                            <div class="col-4">
+                                <span class="badge bg-warning text-dark rounded-pill p-2 mb-1 d-block">Menunggu</span>
+                                <span class="fw-bold">42</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-3 mt-5">
+        <div class="container text-center small">
+            <span>&copy; 2026 E-Lapor Santri Pesantren. Seluruh Hak Cipta Dilindungi.</span>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

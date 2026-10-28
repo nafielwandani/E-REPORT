@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengaturan - E-Lapor Santri</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+                <i class="fa-solid fa-mosque fs-4"></i> E-Lapor Santri
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fa-solid fa-house me-1"></i> Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html"><i class="fa-solid fa-gauge me-1"></i> Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="statistik.html"><i class="fa-solid fa-chart-pie me-1"></i> Statistik</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fw-semibold" href="setting.html"><i class="fa-solid fa-gear me-1"></i> Pengaturan</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container py-4">
+
+        <!-- Header Page -->
+        <div class="mb-4">
+            <h3 class="fw-bold text-success mb-1">Pengaturan Sistem E-Lapor</h3>
+            <p class="text-muted small mb-0">Kelola informasi pesantren, akun pengurus, dan preferensi notifikasi.</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Sidebar Nav Setting -->
+            <div class="col-md-3">
+                <div class="list-group shadow-sm border-0">
+                    <a href="#profil" class="list-group-item list-group-item-action active bg-success border-success fw-bold" data-bs-toggle="list">
+                        <i class="fa-solid fa-building-columns me-2"></i> Profil Pesantren
+                    </a>
+                    <a href="#notifikasi" class="list-group-item list-group-item-action fw-semibold" data-bs-toggle="list">
+                        <i class="fa-solid fa-bell me-2"></i> Notifikasi & WA
+                    </a>
+                    <a href="#keamanan" class="list-group-item list-group-item-action fw-semibold" data-bs-toggle="list">
+                        <i class="fa-solid fa-lock me-2"></i> Akun & Keamanan
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="col-md-9">
+                <div class="tab-content">
+                    
+                    <!-- Tab Profil Pesantren -->
+                    <div class="tab-pane fade show active" id="profil">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header bg-white py-3">
+                                <h6 class="fw-bold text-success mb-0"><i class="fa-solid fa-sliders me-2"></i>Informasi Umum Pesantren</h6>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label class="form-label fw-semibold">Nama Pondok Pesantren</label>
+                                        <input type="text" class="form-control" value="">
+                                    </div>
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">Email Pengurus</label>
+                                            <input type="email" class="form-control" value="">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label fw-semibold">No. WhatsApp Hotline Santri</label>
+                                            <input type="text" class="form-control" value="">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label fw-semibold">Alamat Kompleks Pesantren</label>
+                                        <textarea class="form-control" rows="3"></textarea>
+                                    </div>
+                                    <button type="button" class="btn btn-success rounded-pill px-4">Simpan Perubahan</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Notifikasi -->
+                    <div class="tab-pane fade" id="notifikasi">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header bg-white py-3">
+                                <h6 class="fw-bold text-success mb-0"><i class="fa-solid fa-bell me-2"></i>Pengaturan Notifikasi Pengaduan</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="notifWa" checked>
+                                    <label class="form-check-label fw-semibold" for="notifWa">Kirim Notifikasi Otomatis ke WhatsApp Santri saat Status Laporan Berubah</label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="notifEmail" checked>
+                                    <label class="form-check-label fw-semibold" for="notifEmail">Kirim Salinan Laporan Baru ke Email Pengurus Kamtib</label>
+                                </div>
+                                <div class="form-check form-switch mb-3">
+                                    <input class="form-check-input" type="checkbox" id="anonimAllow" checked>
+                                    <label class="form-check-label fw-semibold" for="anonimAllow">Izinkan Santri Mengirim Laporan Secara Anonim / Rahasia</label>
+                                </div>
+                                <button type="button" class="btn btn-success rounded-pill px-4 mt-2">Simpan Preferensi</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Keamanan -->
+                    <div class="tab-pane fade" id="keamanan">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header bg-white py-3">
+                                <h6 class="fw-bold text-success mb-0"><i class="fa-solid fa-key me-2"></i>Ganti Password Pengurus</h6>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label class="form-label fw-semibold">Password Lama</label>
+                                        <input type="password" class="form-control">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label fw-semibold">Password Baru</label>
+                                        <input type="password" class="form-control">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label fw-semibold">Konfirmasi Password Baru</label>
+                                        <input type="password" class="form-control">
+                                    </div>
+                                    <button type="button" class="btn btn-success rounded-pill px-4">Update Password</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-3 mt-5">
+        <div class="container text-center small">
+            <span>&copy; 2026 E-Lapor Santri Pesantren. Seluruh Hak Cipta Dilindungi.</span>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
